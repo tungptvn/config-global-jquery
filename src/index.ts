@@ -1,7 +1,7 @@
 import {WebpackConfig, get} from '@easy-webpack/core'
 import * as webpack from 'webpack'
 
-export function jQuery() {
+export = function jQuery() {
   return function jQuery(this: WebpackConfig): WebpackConfig {
     return {
       plugins: [
