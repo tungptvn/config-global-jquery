@@ -15,7 +15,7 @@ export = function jQuery({expose = true} = {}) {
 
     if (expose) {
       config.module = {
-        loaders: get(this, 'module.loaders', []).concat([
+        rules: get(this, 'module.rules', []).concat([
           { test: require.resolve('jquery'), loader: 'expose?$!expose?jQuery' }
         ])
       }
