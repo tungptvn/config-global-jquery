@@ -1,8 +1,8 @@
-import {WebpackConfig, get} from '@easy-webpack/core'
+import {WebpackConfigWithMetadata, get} from '@easy-webpack/core'
 import * as webpack from 'webpack'
 
 export = function jQuery({expose = true} = {}) {
-  return function jQuery(this: WebpackConfig): WebpackConfig {
+  return function jQuery(this: WebpackConfigWithMetadata): WebpackConfigWithMetadata {
     const config = {
       plugins: [
         new webpack.ProvidePlugin({
@@ -11,7 +11,7 @@ export = function jQuery({expose = true} = {}) {
           'window.jQuery': 'jquery' // this doesn't expose jQuery property for window, but exposes it to every module
         })
       ].concat(get(this, 'plugins', []))
-    } as WebpackConfig
+    } as WebpackConfigWithMetadata
 
     if (expose) {
       config.module = {
