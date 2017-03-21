@@ -1,5 +1,5 @@
 {
-  "name": "@easy-webpack/config-global-jquery",
+  "name": "config-global-jquery",
   "description": "Easy Webpack configuration function for global-jquery",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
